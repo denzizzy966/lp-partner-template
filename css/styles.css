@@ -634,7 +634,7 @@ progress {
 .container-sm {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
-  width: 100%;
+  width: 100% !important;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
@@ -676,7 +676,6 @@ progress {
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
-
 .row > * {
   flex-shrink: 0;
   width: 100%;
@@ -684,7 +683,7 @@ progress {
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
-  }
+}
 
 .col {
   flex: 1 0 0%;
@@ -3625,7 +3624,8 @@ textarea.form-control-lg {
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
   font-size: var(--bs-nav-link-font-size);
   font-weight: var(--bs-nav-link-font-weight);
-  color: var(--bs-nav-link-color);
+  /* color: var(--bs-nav-link-color); */
+  color: #fff;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -7937,6 +7937,10 @@ textarea.form-control-lg {
   font-size: 1rem !important;
 }
 
+.fs-7 {
+  font-size: 0.75rem !important;
+}
+
 .fst-italic {
   font-style: italic !important;
 }
@@ -10830,6 +10834,24 @@ textarea.form-control-lg {
 
 /* LP Partner */
 
+.bg-lppartner{
+  background-color: #05ac53;
+}
+
+.bg-header{
+  background-color: #7030a0;
+}
+
+.services-item:hover{
+  /* background-color: yellow; */
+  color:black;
+}
+
+.news-item:hover{
+  background-color: #343a40;
+  color:white;
+}
+
 #hero-glitch{
   animation: glitch 1s linear infinite;
 }
@@ -10889,10 +10911,6 @@ textarea.form-control-lg {
   }
 }
 
-.row:hover {
-  background-color: #333; /* Darker background on hover */
-}
-
 .badge {
   cursor: pointer; /* Change cursor to pointer to indicate interactivity */
 }
@@ -10902,7 +10920,15 @@ textarea.form-control-lg {
 }
 
 .bg-darker {
-  background-color: #343a40; /* Menggunakan warna gelap dari tema Bootstrap */
+  background-color: #140f10; /* Menggunakan warna gelap dari tema Bootstrap */
+}
+
+.bg-hero{
+  background-color: #262626;
+}
+
+.bg-title{
+  background-color:#05ac53;
 }
 
 .custom-input {
@@ -10917,18 +10943,184 @@ textarea.form-control-lg {
   color:#fff;
 }
 
-.display-3 {
-  font-weight: 700;
+.glitch {
+	position: relative;
+	overflow: hidden;
+}
+.glitch img {
+	position: relative;
+	z-index: 1;
+	display: block;
+}
+.glitch__layers {
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.glitch__layer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-image: url(../assets/hero_section.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+.glitch__layer:nth-child(1) {
+	transform: translateX(-5%);
+	animation: glitch-anim-1 2s infinite linear alternate;
+}
+.glitch__layer:nth-child(2) {
+	transform: translateX(3%) translateY(3%);
+	animation: glitch-anim-2 2.3s -.8s infinite linear alternate;
+}
+.glitch__layer:nth-child(3) {
+	transform: translateX(5%);
+	animation: glitch-anim-flash 1s infinite linear;
+}
+@keyframes glitch-anim-1 {
+	0% {
+		clip-path: polygon(0 0%, 100% 0%, 100% 5%, 0 5%);
+	}
+	10% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+	}
+	20% {
+		clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+	}
+	30% {
+		clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+	}
+	40% {
+		clip-path: polygon(0 35%, 100% 35%, 100% 35%, 0 35%);
+	}
+	50% {
+		clip-path: polygon(0 45%, 100% 45%, 100% 46%, 0 46%);
+	}
+	60% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 70%, 0 70%);
+	}
+	70% {
+		clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+	}
+	80% {
+		clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+	}
+	90% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+	}
+	100% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
+	}
+}
+@keyframes glitch-anim-2 {
+	0% {
+		clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%);
+	}
+	15% {
+		clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+	}
+	25% {
+		clip-path: polygon(0 8%, 100% 8%, 100% 20%, 0 20%);
+	}
+	30% {
+		clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+	}
+	45% {
+		clip-path: polygon(0 45%, 100% 45%, 100% 45%, 0 45%);
+	}
+	50% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 57%, 0 57%);
+	}
+	65% {
+		clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+	}
+	75% {
+		clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+	}
+	80% {
+		clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%);
+	}
+	95% {
+		clip-path: polygon(0 45%, 100% 45%, 100% 60%, 0 60%);
+	}
+	100% {
+		clip-path: polygon(0 11%, 100% 11%, 100% 15%, 0 15%);
+	}
+}
+@keyframes glitch-anim-flash {
+	0% {
+		opacity: .2;
+	}
+	30%, 100% {
+		opacity: 0;
+	}
 }
 
-.list-group-item {
-    background-color: #05ac53; /* Sesuaikan warna latar belakang item */
-    border: 2px solid white; /* Border putih */
-    font-size: 16px; /* Ukuran font */
+#lp-partner:hover{
+  background-color: #37a157;
 }
-.list-group-item:not(:last-child) {
-    border-bottom: none; /* Hapus border bawah kecuali untuk item terakhir */
+
+#web-partner:hover{
+  background-color: #062160;
 }
-.list-group {
-    border-radius: 0; /* Hapus border radius */
+
+#ec-partner:hover{
+  background-color: #f95309;
+}
+
+#seo-partner:hover{
+  background-color: #a534c3;
+}
+
+#dgm:hover{
+  background-color: #c10504;
+}
+
+#os-cloud:hover{
+  background-color: #06e2fb;
+}
+
+#hotel-os:hover{
+  background-color: #fcc008;
+}
+
+#netshop-os:hover{
+  background-color: #0704f9;
+}
+
+#media-os:hover{
+  background-color: #042461;
+}
+
+#release-os:hover{
+  background-color: #042461;
+}
+
+#recruit-os:hover{
+  background-color: #fbfa0c;
+}
+
+#realtor-os:hover{
+  background-color: #c23e27;
+}
+
+#website-os:hover{
+  background-color: #f450f5;
+}
+
+#system-partner:hover{
+  background-color: #05ac53;
+}
+
+#b2b-os:hover{
+  background-color: #05c263;
+}
+
+#franchise-os:hover{
+  background-color: #7505f5;
 }
